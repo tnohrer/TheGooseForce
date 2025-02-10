@@ -15,106 +15,139 @@ TheGooseForce is a Salesforce extension for Goose that provides enhanced complai
 ## Installation
 
 1. Clone the repository:
-```bash
+```
 git clone https://github.com/tnohrer/TheGooseForce.git
 cd TheGooseForce
+```
+
 Create and activate virtual environment:
 
 2. Create virtual environment
+```
 python -m venv .venv
+```
 
 # Activate virtual environment
 # Windows:
+```
 .venv\Scripts\activate
+```
 # macOS/Linux:
+```
 source .venv/bin/activate
-Install required packages:
+```
+3. Install required packages:
 
+```
 pip install -r requirements.txt
-Configure your Salesforce credentials in .env file:
+```
+4. Configure your Salesforce credentials in .env file:
 
+```
 SALESFORCE_USERNAME=your_username
 SALESFORCE_PASSWORD=your_password
 SALESFORCE_SECURITY_TOKEN=your_security_token
-Update sfdx-project.json with your Salesforce login URL:
+```
+
+5. Update sfdx-project.json with your Salesforce login URL:
 
 {
     "sfdcLoginUrl": "https://test.salesforce.com" // for sandbox
     // or
     "sfdcLoginUrl": "https://login.salesforce.com" // for production
 }
+
 ⚠️ Security Note: This extension currently uses direct login via username, password, and security token. Future versions will implement OAuth2 for enhanced security.
 
-Goose Extension Setup
+## Goose Extension Setup
 To add TheGooseForce to Goose:
 
-Open Goose
-Click on the three dots (⋮) in the top right corner
-Select "Extensions"
-Click "Add Extension"
-Fill in the following details:
+###Open Goose
+1. Click on the three dots (⋮) in the top right corner
+2. Select "Extensions"
+3. Click "Add Extension"
+4. Fill in the following details:
+```
 ID: salesforce-mcp
 Name: TheGooseForce
 Description: Salesforce integration for complaint and case management
 Command: /Users/[username]/Desktop/GooseForce-main/.venv/bin/python3 /Users/[username]/Desktop/GooseForce-main/server.py
+```
 Replace [username] with your actual username
 Note: The command should point to the Python executable in your virtual environment and the server.py file in your installation directory. Make sure to use absolute paths.
 
 After adding the extension:
 
-Click "Save"
-The extension will appear in your extensions list
-You can now use TheGooseForce capabilities through Goose
-Troubleshooting
+1. Click "Save"
+2. The extension will appear in your extensions list
+3. You can now use TheGooseForce capabilities through Goose
+
+
+##Troubleshooting
 Common Setup Issues:
 
-Extension Not Loading
+1. Extension Not Loading
 
+```
 Verify paths in command are correct and absolute
 Check virtual environment is activated
 Ensure all requirements are installed
 Check logs in Goose developer console (⌘+Option+I)
-Authentication Errors
+```
 
+2. Authentication Errors
+
+```
 Verify Salesforce credentials in .env file
 Check security token is current
 Ensure IP address is allowed in Salesforce
 Confirm user has API access enabled
-Python Path Issues
+```
+3. Python Path Issues
 
+```
 Use which python3 to verify Python path
 Ensure virtual environment is properly activated
 Check Python version matches requirements
-Permission Issues
+```
+4. Permission Issues
 
+```
 Check file permissions on server.py
 Verify user has execute permissions on Python
 Ensure .env file is readable
-Connection Issues
+```
 
+5. Connection Issues
+
+```
 Check internet connectivity
 Verify Salesforce org is accessible
 Confirm no VPN conflicts
 Check for Salesforce maintenance windows
+```
+
 Quick Fixes:
 
 Restart Goose after configuration changes
 Delete and recreate extension if settings aren't saving
 Clear Goose cache if persistent issues occur
 Check extension logs for detailed error messages
-Configuration
+
+##Configuration
 The extension can be configured through:
 
 Environment variables
 .env file
 Goose extension settings
-Contributing
+
+
+##Contributing
 This is an open-source project. Contributions, issues, and feature requests are welcome.
 
-License
-MIT License
 
-Future Enhancements
+
+##Future Enhancements
 OAuth2 implementation
 Enhanced security features
 Additional Salesforce object support
