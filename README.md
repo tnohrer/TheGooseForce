@@ -45,71 +45,6 @@ Update sfdx-project.json with your Salesforce login URL:
 }
 ⚠️ Security Note: This extension currently uses direct login via username, password, and security token. Future versions will implement OAuth2 for enhanced security.
 
-[Rest of the README remains the same...]
-
-
-
-Changes made:
-1. Numbered installation steps clearly
-2. Added virtual environment creation and activation instructions
-3. Added step for updating sfdx-project.json
-4. Separated code blocks with proper formatting
-5. Maintained consistent styling
-
-Would you like me to:
-1. Add more detail to any section?
-2. Include virtual environment deactivation instructions?
-3. Add troubleshooting specific to virtual environment issues?
-Can you show me the fully updated and formatted readme please
-
-
-# TheGooseForce
-TheGooseForce is a Salesforce extension for Goose that provides enhanced complaint management capabilities through direct Salesforce integration.
-
-## Features
-- **Salesforce API Integration**: Direct connection to your Salesforce org
-- **Case Management**: Handle case-related operations using LLMs
-- **Automated Workflows**: Execute complex Salesforce operations through simple commands
-
-## Prerequisites
-- Python 3.10 or higher
-- Salesforce org access
-- Goose CLI installed
-- Required Python packages (see requirements.txt)
-
-## Installation
-
-1. Clone the repository:
-```bash
-git clone https://github.com/tnohrer/TheGooseForce.git
-cd TheGooseForce
-Create and activate virtual environment:
-
-# Create virtual environment
-python -m venv .venv
-
-# Activate virtual environment
-# Windows:
-.venv\Scripts\activate
-# macOS/Linux:
-source .venv/bin/activate
-Install required packages:
-
-pip install -r requirements.txt
-Configure your Salesforce credentials in .env file:
-
-SALESFORCE_USERNAME=your_username
-SALESFORCE_PASSWORD=your_password
-SALESFORCE_SECURITY_TOKEN=your_security_token
-Update sfdx-project.json with your Salesforce login URL:
-
-{
-    "sfdcLoginUrl": "https://test.salesforce.com" // for sandbox
-    // or
-    "sfdcLoginUrl": "https://login.salesforce.com" // for production
-}
-⚠️ Security Note: This extension currently uses direct login via username, password, and security token. Future versions will implement OAuth2 for enhanced security.
-
 Goose Extension Setup
 To add TheGooseForce to Goose:
 
@@ -184,3 +119,4 @@ OAuth2 implementation
 Enhanced security features
 Additional Salesforce object support
 Expanded query capabilities
+
