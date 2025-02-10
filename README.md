@@ -20,7 +20,7 @@ git clone https://github.com/tnohrer/TheGooseForce.git
 cd TheGooseForce
 Create and activate virtual environment:
 
-# Create virtual environment
+2. Create virtual environment
 python -m venv .venv
 
 # Activate virtual environment
