@@ -3,9 +3,10 @@ TheGooseForce is a Salesforce extension for Goose that makes any Salesforce user
 
 ## Features
 - **Salesforce API Integration**: Direct connection to your Salesforce org
-- **Case Management**: Handle case-related operations using LLMs
+- **Case Management**: Handle case-related operations using LLMs such as summarizing details and suggesting next actions to take
+- **Knowledge Articles**: Easily find related knowledge articles to your existing issues and have them summaraized via GooseForce.
 - **Automated Workflows**: Execute complex Salesforce operations through simple commands
-- **Build and deploy custom components**: Build and deploy custom components straight from Goose
+- **Build and deploy custom components**: Build and deploy custom components such as LWCs, Apex, and Aura cmps straight from Goose
 - **Debugging**: Use the Gooseforce to help you debug issues in salesforce
 
 - If you can dream it, Gooseforce can do it! 
