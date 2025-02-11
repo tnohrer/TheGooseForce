@@ -2,12 +2,11 @@ import asyncio
 import json
 import os
 import logging
-from dotenv import load_dotenv
 from simple_salesforce import Salesforce
 import mcp.types as types
 from mcp.server import Server, NotificationOptions
 from mcp.server.models import InitializationOptions
-import mcp.server.stdio  # ✅ Ensure correct import
+import mcp.server.stdio
 
 # Configure logging for debugging
 logging.basicConfig(level=logging.DEBUG, format="%(asctime)s - %(levelname)s - %(message)s")
@@ -20,24 +19,27 @@ class SalesforceClient:
         self.sobjects_cache = {}
 
     def connect(self):
-        """Establishes a connection to Salesforce using environment variables."""
-        load_dotenv()
+        """Establishes a connection to Salesforce using extension variables."""
         try:
-            username = os.getenv("SALESFORCE_USERNAME")
-            password = os.getenv("SALESFORCE_PASSWORD")
-            security_token = os.getenv("SALESFORCE_SECURITY_TOKEN")
+            username = os.environ.get("SALESFORCE_USERNAME")
+            password = os.environ.get("SALESFORCE_PASSWORD")
+            security_token = os.environ.get("SALESFORCE_SECURITY_TOKEN")
+            instance_url = os.environ.get("SALESFORCE_INSTANCE_URL", "https://test.salesforce.com")
             
             logging.info(f"Attempting to connect with username: {username}")
             logging.info(f"Password present: {'Yes' if password else 'No'}")
             logging.info(f"Security token present: {'Yes' if security_token else 'No'}")
+            logging.info(f"Instance URL: {instance_url}")
             
-            # For test.salesforce.com
+            # Use the instance_url to determine domain
+            domain = 'test' if 'test' in instance_url else None
+            
             self.sf = Salesforce(
                 username=username,
                 password=password,
                 security_token=security_token,
-                domain='test',
-                instance_url='https://test.salesforce.com'
+                domain=domain,
+                instance_url=instance_url
             )
             logging.info("✅ Successfully connected to Salesforce")
             return True

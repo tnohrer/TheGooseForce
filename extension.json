@@ -1,0 +1,29 @@
+{
+    "id": "salesforce-mcp",
+    "name": "TheGooseForce",
+    "description": "Salesforce integration for complaint and case management",
+    "command": "/Users/[username]/Desktop/GooseForce-main/.venv/bin/python3 /Users/[username]/Desktop/GooseForce-main/src/thegooseforce/server.py",
+    "variables": {
+      "SALESFORCE_USERNAME": {
+        "type": "string",
+        "description": "Your Salesforce username",
+        "required": true
+      },
+      "SALESFORCE_PASSWORD": {
+        "type": "password",
+        "description": "Your Salesforce password",
+        "required": true
+      },
+      "SALESFORCE_SECURITY_TOKEN": {
+        "type": "password",
+        "description": "Your Salesforce security token",
+        "required": true
+      },
+      "SALESFORCE_INSTANCE_URL": {
+        "type": "string",
+        "description": "Your Salesforce instance URL (e.g., https://test.salesforce.com or https://login.salesforce.com)",
+        "required": true,
+        "default": "https://test.salesforce.com"
+      }
+    }
+  }
