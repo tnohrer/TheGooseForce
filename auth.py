@@ -1,28 +1,28 @@
 import os
-from dotenv import load_dotenv
 from simple_salesforce import Salesforce
 
-load_dotenv()  # Load environment variables from .env file
-
 def get_salesforce_client():
-    """Establishes a connection to Salesforce"""
+    """Establishes a connection to Salesforce using extension variables"""
     try:
-        username = os.getenv("SALESFORCE_USERNAME")
-        password = os.getenv("SALESFORCE_PASSWORD")
-        security_token = os.getenv("SALESFORCE_SECURITY_TOKEN")
+        username = os.environ.get("SALESFORCE_USERNAME")
+        password = os.environ.get("SALESFORCE_PASSWORD")
+        security_token = os.environ.get("SALESFORCE_SECURITY_TOKEN")
+        instance_url = os.environ.get("SALESFORCE_INSTANCE_URL", "https://test.salesforce.com")
         
         print(f"Attempting to connect with username: {username}")
         print(f"Password present: {'Yes' if password else 'No'}")
         print(f"Security token present: {'Yes' if security_token else 'No'}")
+        print(f"Instance URL: {instance_url}")
         
-        # Append security token to password
-        full_password = password + security_token
+        # Use the instance_url to determine domain
+        domain = 'test' if 'test' in instance_url else None
         
         sf = Salesforce(
             username=username,
-            password=full_password,
-            instance_url="https://test.salesforce.com",
-            domain="test"
+            password=password,
+            security_token=security_token,
+            instance_url=instance_url,
+            domain=domain
         )
         return sf
     except Exception as e:
