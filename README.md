@@ -11,6 +11,7 @@ TheGooseForce is a Salesforce extension for Goose that provides enhanced complai
 - Salesforce org access
 - Goose CLI installed
 - Required Python packages (see requirements.txt)
+- Must start virtual environment before installing the extension
 
 ## Installation
 
@@ -41,21 +42,16 @@ source .venv/bin/activate
 ```
 pip install -r requirements.txt
 ```
-4. Configure your Salesforce credentials in .env file:
+4. Find your Python and server.py paths:
 
 ```
-SALESFORCE_USERNAME=your_username
-SALESFORCE_PASSWORD=your_password
-SALESFORCE_SECURITY_TOKEN=your_security_token
+# Get Python path (make sure virtual environment is activated)
+which python3
+
+# Verify server.py location
+ls -l src/thegooseforce/server.py
 ```
 
-5. Update sfdx-project.json with your Salesforce login URL:
-
-{
-    "sfdcLoginUrl": "https://test.salesforce.com" // for sandbox
-    // or
-    "sfdcLoginUrl": "https://login.salesforce.com" // for production
-}
 
 ⚠️ Security Note: This extension currently uses direct login via username, password, and security token. Future versions will implement OAuth2 for enhanced security.
 
@@ -70,11 +66,23 @@ To add TheGooseForce to Goose:
 ```
 ID: salesforce-mcp
 Name: TheGooseForce
-Description: Salesforce integration for complaint and case management
+Description: Whatever description you want to put. I suggest something funny like "The Goose is loose and it's in Salesforce"
 Command: /Users/[username]/Desktop/GooseForce-main/.venv/bin/python3 /Users/[username]/Desktop/GooseForce-main/server.py
 ```
 Replace [username] with your actual username
 Note: The command should point to the Python executable in your virtual environment and the server.py file in your installation directory. Make sure to use absolute paths.
+
+5. Setup the needed variables:
+
+```
+SALESFORCE_USERNAME: Your Salesforce username
+SALESFORCE_PASSWORD: Your Salesforce password
+SALESFORCE_SECURITY_TOKEN: Your Salesforce security token
+SALESFORCE_INSTANCE_URL: https://test.salesforce.com 
+```
+Note: These can be changed at any time by clicking the gear icon next to the extension. 
+
+Notes: https://test.salesforce.com for a sandbox or https://login.salesforce.com for a production instance. 
 
 After adding the extension:
 
