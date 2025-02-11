@@ -1,10 +1,14 @@
 # TheGooseForce
-TheGooseForce is a Salesforce extension for Goose that provides enhanced complaint management capabilities through direct Salesforce integration.
+TheGooseForce is a Salesforce extension for Goose that makes any Salesforce user a Salesforce super user! 
 
 ## Features
 - **Salesforce API Integration**: Direct connection to your Salesforce org
 - **Case Management**: Handle case-related operations using LLMs
 - **Automated Workflows**: Execute complex Salesforce operations through simple commands
+- **Build and deploy custom components**: Build and deploy custom components straight from Goose
+- **Debugging**: Use the Gooseforce to help you debug issues in salesforce
+
+- If you can dream it, Gooseforce can do it! 
 
 ## Prerequisites
 - Python 3.10 or higher
