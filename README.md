@@ -82,7 +82,7 @@ SALESFORCE_INSTANCE_URL: https://test.salesforce.com
 ```
 Note: These can be changed at any time by clicking the gear icon next to the extension. 
 
-Notes: https://test.salesforce.com for a sandbox or https://login.salesforce.com for a production instance. 
+Note: https://test.salesforce.com for a sandbox or https://login.salesforce.com for a production instance. 
 
 After adding the extension:
 
