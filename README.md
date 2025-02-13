@@ -63,7 +63,7 @@ ls -l src/thegooseforce/server.py
 ## Goose Extension Setup
 To add TheGooseForce to Goose:
 
-###Open Goose
+### Open Goose
 1. Click on the three dots (⋮) in the top right corner
 2. Select "Extensions"
 3. Click "Add Extension"
@@ -96,7 +96,7 @@ After adding the extension:
 3. You can now use TheGooseForce capabilities through Goose
 
 
-##Troubleshooting
+## Troubleshooting
 Common Setup Issues:
 
 1. Extension Not Loading
@@ -147,7 +147,7 @@ Delete and recreate extension if settings aren't saving
 Clear Goose cache if persistent issues occur
 Check extension logs for detailed error messages
 
-##Configuration
+## Configuration
 The extension can be configured through:
 
 Environment variables
@@ -155,12 +155,12 @@ Environment variables
 Goose extension settings
 
 
-##Contributing
+## Contributing
 This is an open-source project. Contributions, issues, and feature requests are welcome.
 
 
 
-##Future Enhancements
+## Future Enhancements
 OAuth2 implementation
 Enhanced security features
 Additional Salesforce object support
